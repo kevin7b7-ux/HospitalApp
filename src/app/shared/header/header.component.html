@@ -1,0 +1,18 @@
+
+
+
+<p-menubar >
+    <ng-template pTemplate="start">
+        <button (click)="showSideBar()" pButton type="button" icon="pi pi-bars"  class="p-button-text"></button>
+    </ng-template>
+    <ng-template pTemplate="end">
+        <p-menubar [style]="{border: 'none'}" [model]="items">
+            <p-tieredMenu #menu [model]="itemsUser" [popup]="true"></p-tieredMenu>
+            <p-chip class="cursor-pointer"  (click)="menu.toggle($event)" label="Kevin B" image="../../../assets/images/paciente.png"></p-chip>
+        </p-menubar>
+    </ng-template>
+
+   
+ 
+</p-menubar>
+

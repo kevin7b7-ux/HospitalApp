@@ -1,0 +1,22 @@
+
+
+
+
+<div class="grid flex h-screen">
+
+    <shared-sidebar  [display]="flag"></shared-sidebar>
+
+    <div class="flex-1">
+        
+        <shared-header class="" (showEmitter)="showSideBar()" ></shared-header>
+
+        <div class="col">
+            <router-outlet></router-outlet>
+        </div>
+
+    </div>
+
+
+</div>
+
+
