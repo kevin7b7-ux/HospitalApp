@@ -6,6 +6,11 @@ import {MenuModule} from 'primeng/menu';
 import {MenubarModule} from 'primeng/menubar';
 import { ChipModule } from 'primeng/chip';
 import {TieredMenuModule} from 'primeng/tieredmenu';
+import {CardModule} from 'primeng/card';
+import { InputTextModule } from "primeng/inputtext";
+import { CascadeSelectModule } from "primeng/cascadeselect";
+import {FileUploadModule} from 'primeng/fileupload';
+
 
 
 @NgModule({
@@ -21,7 +26,11 @@ import {TieredMenuModule} from 'primeng/tieredmenu';
     MenuModule,
     MenubarModule,
     ChipModule,
-    TieredMenuModule
+    TieredMenuModule,
+    CardModule,
+    InputTextModule,
+    CascadeSelectModule,
+    FileUploadModule
   ]
 })
 export class PrimengModule { }

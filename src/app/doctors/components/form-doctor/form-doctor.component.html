@@ -1,1 +1,32 @@
-<p>form-doctor works!</p>
+<div class="grid m-5">
+    <div class="col-12">
+        <h3>Crear un nuevo doctor</h3>
+    </div>
+<form action="" [formGroup]="formDoctor">
+    <div class="col-6">
+        <div class="col block">
+            <span class="p-float-label">
+                <input formControlName="nombre" type="text" id="inputtext" pInputText> 
+                <label for="inputtext">Nombre</label>
+            </span>
+        </div>
+
+        <div class="col mt-5 block">
+            <p-cascadeSelect  formControlName="hospitals" [options]="hospitals" optionLabel="name" optionGroupLabel="name"
+            [optionGroupChildren]="[]" [style]="{'minWidth': '14rem'}"></p-cascadeSelect>
+        </div>
+
+        <div class="col mt-5 block">
+            <h5>Por favor subir una imagen</h5>
+            <p-fileUpload #fubauto formControlName="img" mode="basic" name="demo[]" url="./upload.php" accept="image/*"   [auto]="true" chooseLabel="Browse"></p-fileUpload>
+        </div>
+    </div>
+
+</form>
+    <div class="col-6">
+
+        <img src="https://www.softzone.es/app/uploads-softzone.es/2018/04/guest.png" alt="">
+
+    </div>
+
+</div>
