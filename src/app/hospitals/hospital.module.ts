@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { ListHospitalsComponent } from './components/list-hospitals/list-hospitals.component';
 import { FormHospitalsComponent } from './components/form-hospitals/form-hospitals.component';
 import { HospitalRoutingModule } from './hospital-routing.module';
+import { HttpClientModule } from '@angular/common/http';
 
 
 
@@ -13,7 +14,8 @@ import { HospitalRoutingModule } from './hospital-routing.module';
   ],
   imports: [
     CommonModule,
-    HospitalRoutingModule
+    HospitalRoutingModule,
+    HttpClientModule
   ]
 })
 export class HospitalModule { }

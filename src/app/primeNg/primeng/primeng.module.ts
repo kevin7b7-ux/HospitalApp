@@ -10,6 +10,7 @@ import {CardModule} from 'primeng/card';
 import { InputTextModule } from "primeng/inputtext";
 import { CascadeSelectModule } from "primeng/cascadeselect";
 import {FileUploadModule} from 'primeng/fileupload';
+import {ToastModule} from 'primeng/toast';
 
 
 
@@ -30,7 +31,8 @@ import {FileUploadModule} from 'primeng/fileupload';
     CardModule,
     InputTextModule,
     CascadeSelectModule,
-    FileUploadModule
+    FileUploadModule,
+    ToastModule
   ]
 })
 export class PrimengModule { }

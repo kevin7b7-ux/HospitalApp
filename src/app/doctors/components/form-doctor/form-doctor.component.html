@@ -1,32 +1,35 @@
-<div class="grid m-5">
+<div class="grid m-5 flex justify-content-center">
     <div class="col-12">
-        <h3>Crear un nuevo doctor</h3>
+        <h3 class="text-center">Crear un nuevo doctor</h3>
     </div>
-<form action="" [formGroup]="formDoctor">
+<form [formGroup]="formDoctor" (onSubmit)="onSubmit()">
     <div class="col-6">
-        <div class="col block">
+        <div class="col">
             <span class="p-float-label">
                 <input formControlName="nombre" type="text" id="inputtext" pInputText> 
                 <label for="inputtext">Nombre</label>
             </span>
         </div>
 
-        <div class="col mt-5 block">
-            <p-cascadeSelect  formControlName="hospitals" [options]="hospitals" optionLabel="name" optionGroupLabel="name"
+        <div class="col mt-5">
+            <p-cascadeSelect  formControlName="hospital" [options]="hospitalsItem" optionLabel="name" optionGroupLabel="name"
             [optionGroupChildren]="[]" [style]="{'minWidth': '14rem'}"></p-cascadeSelect>
         </div>
 
         <div class="col mt-5 block">
             <h5>Por favor subir una imagen</h5>
-            <p-fileUpload #fubauto formControlName="img" mode="basic" name="demo[]" url="./upload.php" accept="image/*"   [auto]="true" chooseLabel="Browse"></p-fileUpload>
-        </div>
+
+            <p-fileUpload  mode="basic" chooseLabel="Choose" name="demo[]" url="https://www.primefaces.org/cdn/api/upload.php" accept="image/*"  (onSelect)="onUpload($event)"></p-fileUpload>        </div>
     </div>
 
+    <button type="" (click)="onSubmit()" pButton class="p-button-rounded p-button-secondary">Guardar</button>
 </form>
-    <div class="col-6">
+    <div class="col-4">
 
-        <img src="https://www.softzone.es/app/uploads-softzone.es/2018/04/guest.png" alt="">
+        <img [src]="docImage? docImage.link : 'https://www.softzone.es/app/uploads-softzone.es/2018/04/guest.png'" height="226px" weight="auto"  alt="">
 
     </div>
 
 </div>
+
+<p-toast key="key1"></p-toast>

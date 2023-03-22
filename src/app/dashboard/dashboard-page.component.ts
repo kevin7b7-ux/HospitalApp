@@ -13,6 +13,5 @@ export class DashboardPageComponent {
 
   showSideBar(){
     this.flag = !this.flag;
-    console.log( this.flag )
   }
 }

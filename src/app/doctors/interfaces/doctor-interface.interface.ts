@@ -10,10 +10,11 @@ export interface Medico {
     nombre:   string;
     usuario:  Hospital;
     hospital: Hospital;
-    img:      string;
+    img?:      string;
 }
 
 export interface Hospital {
     _id:    string;
     nombre: string;
+    code: string
 }

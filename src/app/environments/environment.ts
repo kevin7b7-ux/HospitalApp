@@ -1,0 +1,5 @@
+export const  env = {
+
+    jwtToken: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NDEwYjM1ZTEyNzZmNzYxNDE1M2E3YTUiLCJpYXQiOjE2Nzk1MTc1MDcsImV4cCI6MTY3OTU2MDcwN30.-TH3XsT-sCPkXBuLBE6s7z1m0vYkPzn2uoSpavQyA0A'
+
+}

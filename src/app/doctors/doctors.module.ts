@@ -4,7 +4,8 @@ import { CommonModule } from '@angular/common';
 import { ListDoctorsComponent } from './components/list-doctors/list-doctors.component';
 import { DoctorsRoutingModule } from './doctors-routing.module';
 import { FormDoctorComponent } from './components/form-doctor/form-doctor.component';
-import  { ReactiveFormsModule } from '@angular/forms'
+import  { ReactiveFormsModule } from '@angular/forms';
+import { MessagesModule } from 'primeng/messages'; 
 
 
 
@@ -18,7 +19,8 @@ import  { ReactiveFormsModule } from '@angular/forms'
     CommonModule,
     DoctorsRoutingModule,
     PrimengModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    MessagesModule
   ]
 })
 export class DoctorsModule { }
