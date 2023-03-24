@@ -6,8 +6,16 @@ export interface DoctorPost {
 }
 
 export interface Medico {
-    nombre:   string;
-    usuario:  string;
-    hospital: string;
     _id:      string;
+    nombre:   string;
+    usuario:  Hospital;
+    hospital: Hospital;
+    img?:      string;
+}
+
+
+export interface Hospital {
+    _id:    string;
+    nombre: string;
+    code: string
 }

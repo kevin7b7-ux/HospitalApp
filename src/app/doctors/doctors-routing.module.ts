@@ -9,6 +9,7 @@ const routes: Routes = [
     { path: '', redirectTo: '/dashboard/doctors/list', pathMatch: 'full' },
     { path: 'list', component: ListDoctorsComponent},
     { path: 'create', component: FormDoctorComponent },
+    { path: 'edit/:id', component: FormDoctorComponent },
     { path: '**', component: NotpagefoundComponent }
 ];
 

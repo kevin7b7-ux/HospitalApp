@@ -7,7 +7,12 @@
         <div class="flex grid justify-content-center ">
             <img width="150px" src="http://localhost:3000/api/upload/usuarios/f09b909c-75d4-424e-a42e-cabe9890c42.jpeg" alt="">
         </div>
-        <ng-template pTemplate="title"> {{ doctor.nombre }} </ng-template>
+        <ng-template pTemplate="title"> {{ doctor.nombre }} 
+            <a [routerLink]="['/dashboard/doctors/edit', doctor._id]">
+
+               <i class="pi pi-pencil" style="color: slateblue"></i> 
+            </a>   
+        </ng-template>
         <ng-template pTemplate="subtitle"> {{ doctor.hospital.nombre }} </ng-template>
     </p-card>
 

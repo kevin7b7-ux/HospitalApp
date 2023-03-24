@@ -12,7 +12,7 @@
         </div>
 
         <div class="col mt-5">
-            <p-cascadeSelect  formControlName="hospital" [options]="hospitalsItem" optionLabel="name" optionGroupLabel="name"
+            <p-cascadeSelect  dataKey="code" placeholder="Seleccione un Hospital" formControlName="hospital" [options]="hospitalsItem" optionLabel="name" optionGroupLabel="name"
             [optionGroupChildren]="[]" [style]="{'minWidth': '14rem'}"></p-cascadeSelect>
         </div>
 
@@ -22,12 +22,19 @@
             <p-fileUpload  mode="basic" chooseLabel="Choose" name="demo[]" url="https://www.primefaces.org/cdn/api/upload.php" accept="image/*"  (onSelect)="onUpload($event)"></p-fileUpload>        </div>
     </div>
 
-    <button type="" (click)="onSubmit()" pButton class="p-button-rounded p-button-secondary">Guardar</button>
+    <button *ngIf="!currentDoctor; else update" (click)="onSubmit()" pButton class="p-button-rounded p-button-secondary">Guardar</button>
+    <ng-template #update>
+        <button (click)="onUpdate()" pButton class="p-button-rounded p-button-secondary">Actualizar</button>
+    </ng-template>
+    
 </form>
     <div class="col-4">
 
-        <img [src]="docImage? docImage.link : 'https://www.softzone.es/app/uploads-softzone.es/2018/04/guest.png'" height="226px" weight="auto"  alt="">
-
+        <img *ngIf="!currentDoctor; else imgDoctor" [src]="docImage? docImage.link : 'https://www.softzone.es/app/uploads-softzone.es/2018/04/guest.png'" height="226px" weight="auto"  alt="">
+        <ng-template #imgDoctor>
+            <img [src]="docImage? docImage.link:doctorImg" height="226px" weight="auto"  alt="">
+        </ng-template>
+        
     </div>
 
 </div>

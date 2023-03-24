@@ -25,6 +25,12 @@ export class DoctorsService {
 
   }
 
+  getDoctorById( id: string ){
+    const headers = new HttpHeaders()
+    .set('x-token', env.jwtToken)
+    return this.http.get<DoctorPost>(`${this.serviceUrl}/edit/${id}`, { headers })
+  }
+
   saveDoctor( data: Medico ){
     const newDoctor = { 'nombre':data.nombre, 'hospital':data.hospital.code}
     const headers = new HttpHeaders()
@@ -38,6 +44,13 @@ export class DoctorsService {
     const headers = new HttpHeaders()
     .set('x-token', env.jwtToken)
     return this.http.put<ImageResponse>(`${this.serviceUpload}/${ id }`, formData, { headers })
+  }
+
+  updateDoctor( data: Medico, id:string ){
+    const upDoctor = { 'nombre':data.nombre, 'hospital':data.hospital.code}
+    const headers = new HttpHeaders()
+    .set('x-token', env.jwtToken)
+    return this.http.put<DoctorPost>(`${this.serviceUrl}/${id}`, upDoctor, { headers })
   }
 
 }
